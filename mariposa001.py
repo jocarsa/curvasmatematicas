@@ -7,7 +7,7 @@ width, height = 1920, 1080  # Resolution
 fps = 60                   # Frames per second
 segundos = 60
 minutos = 60
-duration = fps*segundos*minutos            # Duration in seconds
+duration = segundos*minutos            # Duration in seconds
 output_file = 'butterfly_curve.mp4'
 
 # Video writer setup
