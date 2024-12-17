@@ -6,7 +6,7 @@ import random
 # Video settings
 width, height = 1920, 1080  # Resolution
 fps = 60                   # Frames per second
-duration = 10              # Duration in seconds
+duration = 60*60*12              # Duration in seconds
 output_file = 'colorful_epicycloid_curve.mp4'
 
 # Video writer setup
@@ -57,7 +57,7 @@ for i in range(t_max):
     frame = create_background(i, t_max)
 
     # Compute the next point
-    t = 2 * math.pi * (i / fps)  # Scale t to generate more loops
+    t = 2 * math.pi * (i / fps)/5  # Scale t to generate more loops
     x, y = epicycloid_curve(t)
     x_pixel = int(center[0] + x * scale / R)
     y_pixel = int(center[1] - y * scale / R)
