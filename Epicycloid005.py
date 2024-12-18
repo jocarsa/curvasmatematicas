@@ -7,7 +7,7 @@ for _ in range(0,10):
     # Video settings
     width, height = 1920, 1080  # Resolution
     fps = 60                   # Frames per second
-    duration = 60*60*12              # Duration in seconds
+    duration = 60*60*1              # Duration in seconds
     output_file = 'colorful_epicycloid_curve'+str(round(time.time()))+'.mp4'
 
     # Video writer setup
@@ -16,7 +16,7 @@ for _ in range(0,10):
 
     # Time and scale settings
     t_max = duration * fps     # Total number of frames
-    scale = 200                # Scale factor for curve rendering
+    scale = 100                # Scale factor for curve rendering
     center = (width // 2, height // 2)
 
     # Randomize Epicycloid curve parameters
@@ -54,6 +54,7 @@ for _ in range(0,10):
     curve_layer = np.zeros((height, width, 3), dtype=np.uint8)
 
     for i in range(t_max):
+        scale += 0.001
         # Generate gradient background
         frame = create_background(i, t_max)
 
